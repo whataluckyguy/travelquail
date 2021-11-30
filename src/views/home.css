@@ -1,0 +1,239 @@
+/* start styling for slider */
+
+/* end styling for slider */
+
+.landing-page .landing-page-nav .navbar-nav .nav-item > a {
+  border-radius: 10px;
+  color: #3a3a3a;
+  font-family: Nunito, sans-serif;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 0;
+}
+
+.landing-page .landing-page-nav .navbar-nav .nav-item > a:hover {
+  background: white !important;
+  font-size: 15px;
+}
+
+.bglaptop {
+  background-position-y: -11px;
+  background-position-x: -293px;
+  background-image: url(https://res.cloudinary.com/dx6zgsncl/image/upload/v1626188722/laptopbg_kuymcg.png);
+}
+/*
+.bglaptop2{
+    background-image: url(https://res.cloudinary.com/dx6zgsncl/image/upload/v1626159224/lap2_mxz6rl.png);
+} */
+.Enquiryclass:hover {
+  color: #f57e32 !important;
+  /* color: rgb(240, 73, 35); */
+  background: white;
+  font-size: 15px;
+  border: 2px solid;
+}
+
+.crendClass {
+  font-size: 13px !important;
+}
+
+.marginbottomcont {
+  margin-bottom: -1rem;
+}
+.followlogoclass {
+  font-size: 30px;
+  padding: 5px;
+  background: rgb(0, 54, 90);
+  border: 4px solid #f57e32;
+  /* border: 1px solid rgb(0, 54, 90); */
+}
+
+.followiconclass {
+  font-size: 30px;
+  color: white;
+  /* border: 2px solid #f57e32; */
+}
+
+.pointernone {
+  pointer-events: none;
+}
+.Enquiryclass {
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 10px;
+  background: #f57e32;
+  color: rgb(255, 255, 255);
+}
+
+.experciencesection {
+  margin-top: -50px;
+}
+
+.bgmobile {
+  background-position-x: 1197px;
+  background-position-y: -49px;
+  background-image: url(https://res.cloudinary.com/dx6zgsncl/image/upload/v1626189771/10_2_npbb2k.png);
+}
+
+fontp {
+  font-size: 20px;
+}
+.zoomhover {
+  -ms-transform: scale(1.3); /* IE 9 */
+  -webkit-transform: scale(1.3); /* Safari 3-8 */
+  transform: scale(1.3);
+  box-shadow: grey;
+}
+.zoomhovercard:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+}
+.landing-page .landing-page-nav .navbar-nav li {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.newlettercss {
+  margin-left: 110px;
+}
+
+.playstoreimg {
+  width: 190px;
+  filter: blur(2px);
+}
+
+.appstoreimg {
+  margin-top: -2px;
+  margin-left: -65px;
+  width: 198px;
+  filter: blur(2px);
+}
+
+.newletterbutton {
+  margin-left: 10px;
+  border: 1px solid black;
+  background: #00365a;
+  color: white;
+}
+@media screen and (max-width: 600px) {
+  .newlettercss {
+    margin-left: 15px;
+  }
+  .bgmobile {
+    background: none;
+    height: 265px;
+  }
+  .bglaptop {
+    background: none;
+    height: 265px;
+  }
+  .fontp {
+    font-size: 20px;
+  }
+  .experciencesection {
+    height: 237px;
+    padding-bottom: 60px;
+    margin-top: -50px;
+  }
+  .Enquiryclass {
+    margin-left: 0px;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 10px;
+    background: #f57e32;
+    color: rgb(255, 255, 255);
+  }
+  .playstoreimg {
+    width: 170px;
+    margin-left: 5px;
+  }
+  .appstoreimg {
+    margin-top: -2px;
+    margin-left: 0px;
+    width: 175px;
+  }
+
+  .newletterbutton {
+    margin-left: 20px;
+    width: 100%;
+    border: 1px solid black;
+    background: #00365a;
+    color: white;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .bgmobile {
+    background: none;
+    height: 265px;
+  }
+  .bglaptop {
+    background: none;
+    height: 265px;
+  }
+  .fontp {
+    font-size: 20px;
+  }
+  .newlettercss {
+    margin-left: 15px;
+  }
+
+  .experciencesection {
+    height: 405px;
+    padding-bottom: 60px;
+    margin-top: -50px;
+  }
+
+  .Enquiryclass {
+    margin-left: 0px;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 10px;
+    background: #f57e32;
+    color: rgb(255, 255, 255);
+  }
+  .playstoreimg {
+    width: 170px;
+    margin-left: 5px;
+  }
+  .appstoreimg {
+    margin-top: -2px;
+    margin-left: 0px;
+    width: 175px;
+  }
+
+  .newletterbutton {
+    margin-left: 20px;
+    width: 100%;
+    border: 1px solid black;
+    background: #00365a;
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .slider-text {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .slider-text {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .slider-text {
+    font-size: 24px;
+  }
+}
+
+.followlogoclass {
+  border-radius: 20%;
+}
+
+.new-color-scheme {
+  color: #f57e32 !important;
+}

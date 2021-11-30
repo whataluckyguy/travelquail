@@ -1,0 +1,83 @@
+.image {
+  width: 60vw;
+}
+.image > img {
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+}
+.gradient {
+  height: 450px;
+  width: 60vw;
+  z-index: 10;
+  position: absolute;
+}
+.gradientLeft {
+  height: 450px;
+  width: 60vw;
+  z-index: 10;
+  position: absolute;
+  margin-left: 40vw;
+}
+.text {
+  width: 70%;
+  text-align: left;
+  white-space: pre-line;
+  padding: 20px;
+  margin-top: 10vh;
+}
+#slidingOffer__h2,
+#slidingOffer__secondText {
+  margin-left: 5vw;
+}
+#secondText {
+  padding-bottom: 12px;
+}
+#slidingOffer__h2 {
+  font-weight: 700;
+}
+#slidingOffer__accExisted {
+  margin: 2vh 0 0 5vw;
+}
+#Enquiryclass {
+  margin-left: 5vw;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 10px;
+  background: #f57e32;
+  color: rgb(255, 255, 255);
+}
+#Enquiryclass:hover {
+  color: #f57e32;
+  background: white;
+  font-size: 15px;
+  border: 2px solid;
+}
+@media (max-width: 992px) {
+  .carouselItem {
+    flex-direction: column-reverse;
+    height: 100vh;
+  }
+  .text {
+    margin-top: 60% !important;
+    margin-left: 0% !important;
+  }
+  .image {
+    width: 100%;
+    height: 50%;
+    margin: 0 !important;
+    position: absolute;
+    top: 0;
+  }
+  .image > img {
+    margin: 0 !important;
+    height: 100%;
+  }
+  @import url(./Data.js);
+  .gradient,
+  .gradientLeft {
+    margin: 0 !important;
+    width: 100%;
+    height: 70%;
+  }
+}
