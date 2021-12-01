@@ -111,14 +111,16 @@ const slideItems = [
 
 const features = [
   {
-    title: "MAGNIFICIENT MALDIVES",
+    title: "MAGNIFICENT MALDIVES",
+    buttonColor: "",
     img:
       "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634754719/Lucky/new%20travel%20offer%20images/maldives_kiadej.jpg",
     detail:
-      "<span>Waldorf Astoria, Ithaafushi</span></br><span>Four Seasons, Lanada Giraavaru</span></br><span>Dusit Thani, Baa Atoll</span></br><span>Taj Exotica, South Male Atoll</span></br><span>Soneva Fushi, Eydhafushi</span></br><span>W Maldives, North Ari Atoll</span>",
+      "<span>Waldorf Astoria, Ithaafushi</span></br><span>Four Seasons, Landaa Giraavaru</span></br><span>Dusit Thani, Baa Atoll</span></br><span>Taj Exotica, South Male Atoll</span></br><span>Soneva Fushi, Eydhafushi</span></br><span>W Maldives, North Ari Atoll</span>",
   },
   {
     title: "DREAMY DUBAI",
+    buttonColor: "#28538C",
     img:
       "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634754754/Lucky/new%20travel%20offer%20images/dubai_mpqmj4.jpg",
 
@@ -126,7 +128,8 @@ const features = [
       "<span>Atlantis, The Palm</span></br><span>Mandarin Oriental, Jumeirah</span></br><span>Ritz-Carlton, DIFC</span></br><span>Sofitel, The Palm</span></br><span>Taj Dubai, Business Bay</span></br><span>JW Marriott Marquis, Business Bay</span>",
   },
   {
-    title: "SENSATIONAL SRI LANKAN",
+    title: "SENSATIONAL SRI LANKA",
+    buttonColor: "",
     img:
       "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634755056/Lucky/new%20travel%20offer%20images/sri_lanka_2_qujrqx.jpg",
     detail:
@@ -134,6 +137,7 @@ const features = [
   },
   {
     title: "AMAZING ASIA",
+    buttonColor: "#28538C",
     img:
       "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634754720/Lucky/new%20travel%20offer%20images/amazing_asia_u44uaq.jpg",
     detail:
@@ -141,6 +145,7 @@ const features = [
   },
   {
     title: "ADVENTUROUS AFRICA",
+    buttonColor: "",
     img:
       "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634754733/Lucky/new%20travel%20offer%20images/africa_agxjnf.jpg",
     detail:
@@ -148,6 +153,7 @@ const features = [
   },
   {
     title: "ELEGANT EUROPE",
+    buttonColor: "#28538C",
     img:
       "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634755063/Lucky/new%20travel%20offer%20images/europe2_jqm4ag.jpg",
     detail:
@@ -599,7 +605,10 @@ const Home = (props) => {
           href="#scroll"
           onClick={(event) => scrollTo(event, "home")}
         >
-          <span />
+          <img
+            src="https://res.cloudinary.com/dx6zgsncl/image/upload/v1632773361/Lucky/Full_logo_o4hybm.png"
+            alt="logo"
+          />
         </a>
         <ul className="navbar-nav">
           <li className="nav-item">
@@ -608,7 +617,7 @@ const Home = (props) => {
               href="#scroll"
               onClick={(event) => scrollTo(event, "features")}
             >
-              OUR SERVICES
+              TRAVEL OFFERS
             </a>
           </li>
           <li className="nav-item">
@@ -617,7 +626,7 @@ const Home = (props) => {
               href="#scroll"
               onClick={(event) => scrollTo(event, "layouts")}
             >
-              OUR PLATFORM
+              TRAVEL PLATFORM
             </a>
           </li>
           <li className="nav-item">
@@ -699,7 +708,7 @@ const Home = (props) => {
                     href="#scroll"
                     onClick={(event) => scrollTo(event, "features")}
                   >
-                    OUR SERVICES
+                    TRAVEL OFFERS
                   </a>
                 </li>
                 <li className="nav-item">
@@ -708,7 +717,7 @@ const Home = (props) => {
                     href="#scroll"
                     onClick={(event) => scrollTo(event, "layouts")}
                   >
-                    OUR PLATFORM
+                    TRAVEL PLATFORM
                   </a>
                 </li>
                 <li className="nav-item">
@@ -772,12 +781,13 @@ const Home = (props) => {
                   imageURL={item.imageURL}
                   gradientColor={item.gradientColor}
                   textColor={item.textColor}
-                  isReverse={item.isReverse}
-                  direction={item.direction}
-                  margin={item.margin}
-                  headone={item.headone}
-                  headtwo={item.headtwo}
-                  format={item.format}
+                  Heading__1={item.Headline__1}
+                  Heading__2={item.Headline__2}
+                  Heading__3={item.Headline__3}
+                  sub1={item.sub1}
+                  sub2={item.sub2}
+                  sub3={item.sub3}
+                  buttonColor={item.buttonColor}
                 />
               );
             })}
@@ -845,6 +855,7 @@ const Home = (props) => {
                                 className="offset-2 Enquiryclass"
                                 to="/user/enquiry"
                                 /*  onClick={(event) => scrollTo(event, 'themes')} */
+                                style={{ backgroundColor: `${f.buttonColor}` }}
                               >
                                 ENQUIRE NOW{" "}
                                 {/* <i className="simple-icon-arrow-right" /> */}
@@ -884,8 +895,8 @@ const Home = (props) => {
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
                                 PROFILES
                                 <p>
-                                  Create unlimited traveller profiles complete
-                                  with travel preferences & travel documents.
+                                  Create & manage unlimited traveller profiles
+                                  complete with travel preferences & documents.
                                 </p>
                               </h3>
                             </div>
@@ -896,9 +907,8 @@ const Home = (props) => {
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
                                 TRIPS
                                 <p>
-                                  Create trips for single/multiple travellers
-                                  and add flight documents to receive travel
-                                  reminders.
+                                  Create & manage upcoming trips for registered
+                                  travellers & receive travel reminders.
                                 </p>
                               </h3>
                             </div>
@@ -907,10 +917,10 @@ const Home = (props) => {
                             <div className="col-md-12 d-flex">
                               <i className="iconsminds-calendar-4 large-icon mr-2" />
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
-                                CALENDAR
+                                TEAM CALENDAR
                                 <p>
-                                  See upcoming trips in the online calendar view
-                                  and sync with your personal calendar.
+                                  Track all upcoming and historic trips at
+                                  individual, group or team level.
                                 </p>
                               </h3>
                             </div>
@@ -921,26 +931,27 @@ const Home = (props) => {
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
                                 DOCUMENTS
                                 <p>
-                                  Upload documents directly to profiles or trips
-                                  to make them directly available to the
-                                  travellers.
+                                  Upload documents directly to trips or profiles
+                                  & receive expiry notifications.
                                 </p>
                               </h3>
                             </div>
                           </div>
                           <div className="row">
                             <div className="col-md-12 d-flex">
-                              <i className="iconsminds-check large-icon mr-2" />
+                              <i className="iconsminds-line-chart-1 large-icon mr-2" />
+
+                              {/* <i className="iconsminds-check large-icon mr-2" /> */}
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
-                                REQUESTS
+                                EXPENSES
                                 <p>
-                                  Make simple and complex travel requests on
-                                  behalf of multiple travellers
+                                  Track expenditure at individual, group or trip
+                                  level & download expense data.
                                 </p>
                               </h3>
                             </div>
                           </div>
-                          <div className="row">
+                          {/* <div className="row">
                             <div className="col-md-12 d-flex">
                               <i className="iconsminds-line-chart-1 large-icon mr-2" />
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
@@ -952,7 +963,7 @@ const Home = (props) => {
                                 </p>
                               </h3>
                             </div>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
 
@@ -1010,12 +1021,14 @@ const Home = (props) => {
 
                           <div className="row">
                             <div className="col-md-12 d-flex">
-                              <i className="iconsminds-bell large-icon" />
+                              <i className="iconsminds-check large-icon" />
+
+                              {/* <i className="iconsminds-bell large-icon" /> */}
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
-                                NOTIFICATIONS
+                                REQUESTS
                                 <p>
-                                  Receive trip reminders and travel/document
-                                  notifications directly to your device.
+                                  Make individual or group requests for all your
+                                  travel needs & receive direct status updates.
                                 </p>
                               </h3>
                             </div>
@@ -1026,8 +1039,8 @@ const Home = (props) => {
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
                                 PREFERENCES
                                 <p>
-                                  Save travel prefereneces for individual
-                                  travaller and/or for a specific trip.
+                                  Save & manage personal travel information &
+                                  individual travel preferences.
                                 </p>
                               </h3>
                             </div>
@@ -1038,20 +1051,21 @@ const Home = (props) => {
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
                                 ATTACHMENTS
                                 <p>
-                                  Upload and manage travel documents yo always
-                                  have them available on demand.
+                                  Save & manage travel documents to profiles or
+                                  trips for on demand access.
                                 </p>
                               </h3>
                             </div>
                           </div>
                           <div className="row">
                             <div className="col-md-12 d-flex">
-                              <i className="iconsminds-check large-icon" />
+                              <i className="iconsminds-bell large-icon" />
+                              {/* <i className="iconsminds-check large-icon" /> */}
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
-                                SINGLE / GROUP REQUEST
+                                NOTIFICATIONS
                                 <p>
-                                  Make travel requests for a select traveller or
-                                  on behalf of a travelling group.
+                                  Receive request, trip & document notifications
+                                  directly to your device.
                                 </p>
                               </h3>
                             </div>
@@ -1060,10 +1074,10 @@ const Home = (props) => {
                             <div className="col-md-12 d-flex">
                               <i className="iconsminds-calendar-1 large-icon" />
                               <h3 className="mt-3" style={{ color: "#F57E32" }}>
-                                SYNCED CALENDAR
+                                PERSONAL CALENDAR
                                 <p>
-                                  Sync calendar with personal Google/Microsoft
-                                  calendars for dedicated reminders.
+                                  Track all upcoming trips in calendar view and
+                                  sync with personal calendars.
                                 </p>
                               </h3>
                             </div>

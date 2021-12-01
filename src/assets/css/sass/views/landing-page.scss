@@ -27,10 +27,11 @@
   .logo-mobile {
     display: block;
     text-align: center;
-    padding: 3rem 2rem;
+    // padding: 3rem 2rem;
     background: none;
-    width: unset;
-    height: unset;
+    // width: unset;
+    // height: unset;
+
     span {
       display: inline-block;
       width: 150px;
@@ -1428,7 +1429,7 @@
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 992px) {
   .landing-page .section.home {
     height: 780px !important;
   }
@@ -1483,13 +1484,13 @@
 }
 //animation image sizing
 .laptop__left {
-  width: 80%;
+  width: 55%;
   position: absolute;
   left: 5%;
   top: 5rem;
 }
 .laptop__right {
-  width: 35%;
+  width: 25%;
   position: absolute;
   top: 18rem;
   left: 80%;
@@ -1520,7 +1521,7 @@
   left: -15%;
 }
 //mobile view
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .feature-row {
     flex-direction: column-reverse;
   }
@@ -1546,6 +1547,7 @@
   }
   .laptop__right {
     top: 10rem;
+    left: 70%;
   }
   .mobile__left {
     width: 75%;

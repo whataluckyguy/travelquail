@@ -3,36 +3,40 @@ import "./Slides.css";
 import { NavLink } from "react-router-dom";
 
 function Slides({
-  isReverse,
-  children,
   width,
   gradientColor,
   textColor,
-  direction,
-  margin,
-  headone,
-  headtwo,
-  format,
+  Heading__1,
+  Heading__2,
+  Heading__3,
+  sub1,
+  sub2,
+  sub3,
   imageURL,
+  buttonColor,
 }) {
   const [styles, setStyles] = useState("");
   const onWindowResize = (event) => {
     if (event.target.innerWidth >= 992) {
       setStyles(
-        `linear-gradient(${direction}, #${gradientColor} 75%, transparent)`
+        `linear-gradient(90deg, #${gradientColor} 75%, rgba(255, 255, 255, 0))`
       );
     } else {
-      setStyles(`linear-gradient(to top, #${gradientColor} 65%, transparent`);
+      setStyles(
+        `linear-gradient(to top, #${gradientColor} 65%, rgba(255, 255, 255, 0)`
+      );
     }
   };
 
   useEffect(() => {
     if (window.innerWidth >= 992) {
       setStyles(
-        `linear-gradient(${direction}, #${gradientColor} 75%, transparent)`
+        `linear-gradient(90deg, #${gradientColor} 75%, rgba(255, 255, 255, 0))`
       );
     } else {
-      setStyles(`linear-gradient(to top, #${gradientColor} 65%, transparent`);
+      setStyles(
+        `linear-gradient(to top, #${gradientColor} 65%, rgba(255, 255, 255, 0)`
+      );
     }
 
     window.addEventListener("resize", onWindowResize);
@@ -43,19 +47,28 @@ function Slides({
 
   return (
     <div className="carouselItem" style={{ width, marginTop: "13vh" }}>
-      <div className={isReverse} style={{ background: styles }}>
+      <div className="gradient" style={{ background: styles }}>
         <div
           className="text"
           style={{
             width: "70%",
-            marginLeft: `${format}`,
+            marginLeft: "0",
           }}
         >
           <h2 id="slidingOffer__h2" style={{ color: `#${textColor}` }}>
-            {headone}
+            {Heading__1}
+            <br />
+            {Heading__2}
+            <br />
+            {Heading__3}
           </h2>
+
           <p id="slidingOffer__secondText" style={{ color: `#${textColor}` }}>
-            {headtwo}
+            {sub1}
+            <br />
+            {sub2}
+            <br />
+            {sub3}
           </p>
           {/* start */}
 
@@ -63,6 +76,7 @@ function Slides({
             className="mr-2 mb-2 ml-8"
             id="Enquiryclass"
             to="/user/enquiry"
+            style={{ backgroundColor: `${buttonColor}` }}
           >
             ENQUIRE NOW
           </NavLink>
@@ -81,7 +95,7 @@ function Slides({
           src={imageURL}
           alt="Travel Quail"
           style={{
-            marginLeft: `${margin}`,
+            marginLeft: "40vw",
           }}
         />
       </div>
