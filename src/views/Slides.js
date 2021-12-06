@@ -9,9 +9,7 @@ function Slides({
   Heading__1,
   Heading__2,
   Heading__3,
-  sub1,
-  sub2,
-  sub3,
+  sub,
   imageURL,
   buttonColor,
 }) {
@@ -64,11 +62,7 @@ function Slides({
           </h2>
 
           <p id="slidingOffer__secondText" style={{ color: `#${textColor}` }}>
-            {sub1}
-            <br />
-            {sub2}
-            <br />
-            {sub3}
+            {sub}
           </p>
           {/* start */}
 

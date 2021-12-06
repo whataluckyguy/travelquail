@@ -8,9 +8,8 @@ export const sliderData = [
     Headline__1: "DON'T JUST UNDERGO",
     Headline__2: "TRAVEL. HAVE A TRAVEL",
     Headline__3: "EXPERIENCE.",
-    sub1: "Our dedicated team of travel experts are on hand to",
-    sub2: "design itineraries just for you to ensure you have",
-    sub3: "travel experiences to remember.",
+    sub:
+      "Our dedicated team of travel experts are on hand to design itineraries just for you to ensure you have travel experiences to remember.",
     buttonColor: "",
   },
   {
@@ -21,9 +20,8 @@ export const sliderData = [
     Headline__1: "ACCESS A GLOBAL",
     Headline__2: "NETWORK OF HOTELS",
     Headline__3: "AND RESORTS.",
-    sub1: "We have onboarded a global panel of hotels and",
-    sub2: "resorts to give you the best prices for the best",
-    sub3: "locations all year round.",
+    sub:
+      "We have onboarded a global panel of hotels and resorts to give you the best prices for the best locations all year round.",
     buttonColor: "#28538C",
   },
   {
@@ -34,9 +32,8 @@ export const sliderData = [
     Headline__1: "A PERSONAL TRAVEL",
     Headline__2: "ASSISTANT FOR YOUR",
     Headline__3: "ORGANISATION.",
-    sub1: "A world class travel agency combined with a state-",
-    sub2: "of-the-art travel platform to keep your employees",
-    sub3: "organised and your travel costs low.",
+    sub:
+      "A world class travel agency combined with a state-of-the-art travel platform to keep your employees organised and your travel costs low.",
     buttonColor: "",
   },
   {
@@ -47,9 +44,8 @@ export const sliderData = [
     Headline__1: "GET MORE OUT OF YOUR",
     Headline__2: "TRAVEL BY MAKING IT A",
     Headline__3: "PACKAGE.",
-    sub1: "Our trusted panel of intermediaries provide you with",
-    sub2: "ready made packages to maximise your trip by",
-    sub3: "simplifying your schedule.",
+    sub:
+      "Our trusted panel of intermediaries provide you with ready made packages to maximise your trip by simplifying your schedule.",
     buttonColor: "",
   },
   {
@@ -60,9 +56,8 @@ export const sliderData = [
     Headline__1: "REMOVE THE BURDEN OF",
     Headline__2: "PAPERWORK AND",
     Headline__3: "FINANCIAL RISK.",
-    sub1: "We can handle all your documentation, from visas to entry",
-    sub2: "forms, and our panel of insurers will cover your financial",
-    sub3: "risk in uncertain times.",
+    sub:
+      "We can handle all your documentation, from visas to entry forms, and our panel of insurers will cover your financial risk in uncertain times.",
     buttonColor: "#28538C",
   },
   {
@@ -73,9 +68,8 @@ export const sliderData = [
     Headline__1: "KNOW THE RULES FOR",
     Headline__2: "ANY DESTINATION FOR",
     Headline__3: "ANY FACT PATTERN",
-    sub1: "We regularly stay in touch with travel providers",
-    sub2: "and authorities to make sure we know the rules, so",
-    sub3: "you don't have to.",
+    sub:
+      "We regularly stay in touch with travel providers and authorities to make sure we know the rules, so you don't have to.",
     buttonColor: "",
   },
 ];

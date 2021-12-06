@@ -353,33 +353,35 @@ const Home = (props) => {
   const Newsletter = (e) => {
     e.preventDefault();
     const payload = {
-      ...email,
+      email,
     };
-    Axios.post(`${API_URL}/newsletter`, payload).then((result) => {
-      console.log("Newletter Subscription Status: ", result.status);
-      if (result.status === 200) {
-        NotificationManager.success(
-          result.data.msg,
-          "Thank You for suscribing our Newsletter.",
-          3000,
-          null,
-          null,
-          ""
-        );
-      } else if (result.status === 206) {
-        NotificationManager.warning(
-          result.data.msg,
-          "Something went wrong",
-          3000,
-          null,
-          null,
-          ""
-        );
-      }
-    });
-    // .catch((error) =>
-    //   NotificationManager.warning(error, "Update Error", 3000, null, null, "")
-    // );
+    Axios.post(`${API_URL}/newsletter`, payload)
+      .then((result) => {
+        console.log("Payload: ", payload);
+        console.log("Newletter Subscription Status: ", result.status);
+        if (result.status === 200) {
+          NotificationManager.success(
+            result.data.msg,
+            "Thank You for suscribing our Newsletter.",
+            3000,
+            null,
+            null,
+            ""
+          );
+        } else if (result.status === 206) {
+          NotificationManager.warning(
+            result.data.msg,
+            "Something went wrong",
+            3000,
+            null,
+            null,
+            ""
+          );
+        }
+      })
+      .catch((error) =>
+        NotificationManager.warning(error, "Update Error", 3000, null, null, "")
+      );
 
     setEmail("");
   };
@@ -404,7 +406,7 @@ const Home = (props) => {
   const slides = [
     <video controls key="1" width="100%" height="auto" track="testimonial">
       <source
-        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1632800863/Lucky/videos/4_ro4l1y.mp4"
+        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1638811599/Lucky/drive-download-20211206T172520Z-001/Video_1_pau2wa.mp4"
         type="video/mp4"
       />
       <track
@@ -417,7 +419,7 @@ const Home = (props) => {
 
     <video controls key="2" width="100%" height="auto" track="testimonial">
       <source
-        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1632800856/Lucky/videos/3_dyy2vh.mp4"
+        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1638811602/Lucky/drive-download-20211206T172520Z-001/Video_2_s9vfx8.mp4"
         type="video/mp4"
       />
       <track
@@ -436,7 +438,7 @@ const Home = (props) => {
       style={{ outline: "none" }}
     >
       <source
-        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1632800847/Lucky/videos/2_pdzt1m.mp4"
+        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1638811609/Lucky/drive-download-20211206T172520Z-001/Video_3_owjyiz.mp4"
         type="video/mp4"
       />
       <track
@@ -455,7 +457,45 @@ const Home = (props) => {
       style={{ outline: "none" }}
     >
       <source
-        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1632800841/Lucky/videos/1_qweoaq.mp4"
+        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1638811600/Lucky/drive-download-20211206T172520Z-001/Video_4_gvjm6o.mp4"
+        type="video/mp4"
+      />
+      <track
+        default
+        kind="captions"
+        srcLang="en"
+        src="/media/examples/friday.vtt"
+      />
+    </video>,
+    <video
+      controls
+      key="5"
+      width="100%"
+      height="auto"
+      track="testimonial"
+      style={{ outline: "none" }}
+    >
+      <source
+        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1638811597/Lucky/drive-download-20211206T172520Z-001/Video_5_xsmhwy.mp4"
+        type="video/mp4"
+      />
+      <track
+        default
+        kind="captions"
+        srcLang="en"
+        src="/media/examples/friday.vtt"
+      />
+    </video>,
+    <video
+      controls
+      key="6"
+      width="100%"
+      height="auto"
+      track="testimonial"
+      style={{ outline: "none" }}
+    >
+      <source
+        src="https://res.cloudinary.com/dx6zgsncl/video/upload/v1638811593/Lucky/drive-download-20211206T172520Z-001/Video_6_byhdby.mp4"
         type="video/mp4"
       />
       <track
@@ -785,9 +825,7 @@ const Home = (props) => {
                   Heading__1={item.Headline__1}
                   Heading__2={item.Headline__2}
                   Heading__3={item.Headline__3}
-                  sub1={item.sub1}
-                  sub2={item.sub2}
-                  sub3={item.sub3}
+                  sub={item.sub}
                   buttonColor={item.buttonColor}
                 />
               );
