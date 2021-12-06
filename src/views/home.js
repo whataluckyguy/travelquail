@@ -14,6 +14,7 @@ import {
   CardTitle,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
+import "./home.css";
 import Axios from "axios";
 import classnames from "classnames";
 // import Carousel from "react-spring-3d-carousel";
@@ -29,7 +30,6 @@ import { API_URL } from "../apiUrl";
 import "react-phone-number-input/style.css";
 /* import GlideComponentThumbs from "../components/carousel/GlideComponentThumbs"; */
 import { buyUrl, adminRoot } from "../constants/defaultValues";
-import "./home.css";
 import IntlMessages from "../helpers/IntlMessages";
 import { sliderData } from "./Data";
 import { NotificationManager } from "../components/common/react-notifications";
@@ -114,7 +114,7 @@ const features = [
     title: "MAGNIFICENT MALDIVES",
     buttonColor: "",
     img:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634754719/Lucky/new%20travel%20offer%20images/maldives_kiadej.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607643/Lucky/Travel%20offer%20-%20compressed-20211204T084653Z-001/maldives_kiadej_ugvdgm.jpg",
     detail:
       "<span>Waldorf Astoria, Ithaafushi</span></br><span>Four Seasons, Landaa Giraavaru</span></br><span>Dusit Thani, Baa Atoll</span></br><span>Taj Exotica, South Male Atoll</span></br><span>Soneva Fushi, Eydhafushi</span></br><span>W Maldives, North Ari Atoll</span>",
   },
@@ -122,7 +122,7 @@ const features = [
     title: "DREAMY DUBAI",
     buttonColor: "#28538C",
     img:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634754754/Lucky/new%20travel%20offer%20images/dubai_mpqmj4.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607643/Lucky/Travel%20offer%20-%20compressed-20211204T084653Z-001/dubai_mpqmj4_vsadhd.jpg",
 
     detail:
       "<span>Atlantis, The Palm</span></br><span>Mandarin Oriental, Jumeirah</span></br><span>Ritz-Carlton, DIFC</span></br><span>Sofitel, The Palm</span></br><span>Taj Dubai, Business Bay</span></br><span>JW Marriott Marquis, Business Bay</span>",
@@ -131,7 +131,7 @@ const features = [
     title: "SENSATIONAL SRI LANKA",
     buttonColor: "",
     img:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634755056/Lucky/new%20travel%20offer%20images/sri_lanka_2_qujrqx.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607643/Lucky/Travel%20offer%20-%20compressed-20211204T084653Z-001/sri_lanka_2_qujrqx_pfmfns.jpg",
     detail:
       "<span>Cape Weligama, Weligama</span></br><span>Anantara Peace Haven, Tangalle</span></br><span>Amanwella, Tangalle</span></br><span>Uga Chena Huts, Tissamarama</span></br><span>Wild Coast Tented Lodge, Yala</span></br><span>Shangri-La, Hambantota</span>",
   },
@@ -139,7 +139,7 @@ const features = [
     title: "AMAZING ASIA",
     buttonColor: "#28538C",
     img:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634754720/Lucky/new%20travel%20offer%20images/amazing_asia_u44uaq.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607643/Lucky/Travel%20offer%20-%20compressed-20211204T084653Z-001/amazing_asia_u44uaq_j1krfl.jpg",
     detail:
       "<span>Marina Bay Sands, Singapore</span></br><span>Mandarin Oriental, Kuala Lumpur</span></br><span>Padma Resort, Ubud</span></br><span>Mandarin Oriental, Bangkok</span></br><span>The Peninsula, Hong Kong</span></br><span>Halekulani, Okinawa</span>",
   },
@@ -147,7 +147,7 @@ const features = [
     title: "ADVENTUROUS AFRICA",
     buttonColor: "",
     img:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634754733/Lucky/new%20travel%20offer%20images/africa_agxjnf.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607643/Lucky/Travel%20offer%20-%20compressed-20211204T084653Z-001/africa_agxjnf_tdnnns.jpg",
     detail:
       "<span>One & Only, Cape Town</span></br><span>Angama Mara, Masai Mara</span></br><span>The Residence, Zanzibar</span></br><span>Royal Mansour, Marrakech</span></br><span>Sausage Tree Camp, Zambia</span></br><span>One & Only Gorilla’s Nest, Rwanda</span>",
   },
@@ -155,7 +155,7 @@ const features = [
     title: "ELEGANT EUROPE",
     buttonColor: "#28538C",
     img:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634755063/Lucky/new%20travel%20offer%20images/europe2_jqm4ag.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607642/Lucky/Travel%20offer%20-%20compressed-20211204T084653Z-001/europe2_jqm4ag_hnevdo.jpg",
     detail:
       "<span>Four Seasons George V, Paris</span></br><span>The St Regis, Rome</span></br><span>The Savoy Hotel, London</span></br><span>Baur Au Lac, Zurich</span></br><span>Mandarin Oriental, Munich</span></br><span>Anantara Vilamoura, Algarve</span>",
   },
@@ -352,20 +352,23 @@ const Home = (props) => {
 
   const Newsletter = (e) => {
     e.preventDefault();
-    Axios.post(`${API_URL}/newsletter`, { email }).then((result) => {
+    const payload = {
+      ...email,
+    };
+    Axios.post(`${API_URL}/newsletter`, payload).then((result) => {
       console.log("Newletter Subscription Status: ", result.status);
       if (result.status === 200) {
         NotificationManager.success(
-          "",
+          result.data.msg,
           "Thank You for suscribing our Newsletter.",
           3000,
           null,
           null,
           ""
         );
-      } else {
+      } else if (result.status === 206) {
         NotificationManager.warning(
-          "",
+          result.data.msg,
           "Something went wrong",
           3000,
           null,
@@ -373,8 +376,10 @@ const Home = (props) => {
           ""
         );
       }
-      alert("ThankYou for Suscribing our NewsLetter");
     });
+    // .catch((error) =>
+    //   NotificationManager.warning(error, "Update Error", 3000, null, null, "")
+    // );
 
     setEmail("");
   };
@@ -606,8 +611,10 @@ const Home = (props) => {
           onClick={(event) => scrollTo(event, "home")}
         >
           <img
-            src="https://res.cloudinary.com/dx6zgsncl/image/upload/v1632773361/Lucky/Full_logo_o4hybm.png"
+            src="https://res.cloudinary.com/dx6zgsncl/image/upload/v1638686912/Lucky/logo%20compressed/Full-logo_uu6ra8.png"
+            // src="https://res.cloudinary.com/dx6zgsncl/image/upload/v1632773361/Lucky/Full_logo_o4hybm.png"
             alt="logo"
+            className="compressed_logo"
           />
         </a>
         <ul className="navbar-nav">
@@ -617,7 +624,7 @@ const Home = (props) => {
               href="#scroll"
               onClick={(event) => scrollTo(event, "features")}
             >
-              TRAVEL OFFERS
+              OFFERS
             </a>
           </li>
           <li className="nav-item">
@@ -626,7 +633,7 @@ const Home = (props) => {
               href="#scroll"
               onClick={(event) => scrollTo(event, "layouts")}
             >
-              TRAVEL PLATFORM
+              PLATFORM
             </a>
           </li>
           <li className="nav-item">
@@ -669,12 +676,8 @@ const Home = (props) => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className="offset-2 Enquiryclass"
-              to="/user/enquiry"
-              /*  onClick={(event) => scrollTo(event, 'themes')} */
-            >
-              ENQUIRE NOW {/* <i className="simple-icon-arrow-right" /> */}
+            <NavLink className="offset-2 Enquiryclass" to="/user/enquiry">
+              ENQUIRE NOW
             </NavLink>
           </li>
         </ul>
@@ -690,13 +693,13 @@ const Home = (props) => {
                 onClick={(event) => scrollTo(event, "home")}
               >
                 <img
-                  src="https://res.cloudinary.com/dx6zgsncl/image/upload/v1632773361/Lucky/Full_logo_o4hybm.png"
+                  src="https://res.cloudinary.com/dx6zgsncl/image/upload/v1638686912/Lucky/logo%20compressed/Full-logo_uu6ra8.png"
                   className="white"
                   alt="Travel Quail"
                 />
 
                 <img
-                  src="https://res.cloudinary.com/dx6zgsncl/image/upload/v1632773361/Lucky/Full_logo_o4hybm.png"
+                  src="https://res.cloudinary.com/dx6zgsncl/image/upload/v1638686912/Lucky/logo%20compressed/Full-logo_uu6ra8.png"
                   className="dark"
                   alt="Travel Quail"
                 />
@@ -708,7 +711,7 @@ const Home = (props) => {
                     href="#scroll"
                     onClick={(event) => scrollTo(event, "features")}
                   >
-                    TRAVEL OFFERS
+                    OFFERS
                   </a>
                 </li>
                 <li className="nav-item">
@@ -717,7 +720,7 @@ const Home = (props) => {
                     href="#scroll"
                     onClick={(event) => scrollTo(event, "layouts")}
                   >
-                    TRAVEL PLATFORM
+                    PLATFORM
                   </a>
                 </li>
                 <li className="nav-item">
@@ -726,7 +729,7 @@ const Home = (props) => {
                     href="#scroll"
                     onClick={(event) => scrollTo(event, "components")}
                   >
-                    USER EXPERIENCE
+                    EXPERIENCE
                   </a>
                 </li>
 
@@ -736,7 +739,7 @@ const Home = (props) => {
                     href="#scroll"
                     onClick={(event) => scrollTo(event, "themes")}
                   >
-                    CONNECT WITH US
+                    CONNECT
                   </a>
                 </li>
                 <li className="nav-item text-center">
@@ -752,10 +755,8 @@ const Home = (props) => {
                   <NavLink
                     className="mr-2 mb-2 Enquiryclass"
                     to="/user/enquiry"
-                    /* onClick={(event) => scrollTo(event, 'themes')} */
                   >
-                    ENQUIRE NOW{" "}
-                    {/* <i className="simple-icon-arrow-right" /> */}
+                    ENQUIRE NOW
                   </NavLink>
                 </li>
               </ul>

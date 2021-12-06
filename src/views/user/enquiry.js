@@ -14,8 +14,12 @@ import { API_URL } from "../../apiUrl";
 import { NotificationManager } from "../../components/common/react-notifications";
 
 const Enquiry = ({ history, registerUserAction }) => {
+  const [travelEnquiry, setTravelEnquiry] = useState("travelEnquiry");
+  const enquiryOption = (e) => {
+    setTravelEnquiry(e.target.value);
+    console.log("travelEnquiry :", travelEnquiry);
+  };
   const onSubmit = (values, { resetForm, setSubmitting }) => {
-    console.log(values);
     const payload = {
       ...values,
     };
@@ -47,10 +51,15 @@ const Enquiry = ({ history, registerUserAction }) => {
       .catch((error) =>
         NotificationManager.warning(error, "Update Error", 3000, null, null, "")
       );
-    // alert(JSON.stringify(payload, null, 2));
+    alert(JSON.stringify(payload, null, 2));
   };
 
-  const initialValues = { phone: "", email: "" };
+  const initialValues = {
+    phone: "",
+    email: "",
+    name_of_organisation: "",
+    travel_requirements: "",
+  };
   return (
     <Row className="h-100">
       <Colxx xxs="12" md="10" className="mx-auto my-auto">
@@ -73,12 +82,48 @@ const Enquiry = ({ history, registerUserAction }) => {
           <div className="form-side">
             <p className="black mb-0 h3">Welcome to TravelQuail!</p>
             <p className="crendClass mb-0">
-              Please fill out the form and a member of the TravelQuail team will
-              be in touch.
+              Please fill out the enquiry form and a member of the TravelQuail
+              team will be in touch.
             </p>
+
             <CardTitle className="mt-2 mb-3 h6">
               <IntlMessages id="ENQUIRY FORM" />
             </CardTitle>
+            <div
+              className="travelChoice"
+              style={{
+                marginBottom: "2vh",
+                width: "70%",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <span>
+                <input
+                  type="radio"
+                  name="travelEnquiry"
+                  id="travelEnquiry"
+                  value="travelEnquiry"
+                  style={{ marginRight: "5px" }}
+                  checked={travelEnquiry === "travelEnquiry"}
+                  onChange={enquiryOption}
+                />
+                <label htmlFor="travelEnquiry">A Travel Booking</label>
+              </span>
+              <span>
+                <input
+                  type="radio"
+                  name="travelEnquiry"
+                  id="businessEnquiry"
+                  value="businessEnquiry"
+                  style={{ marginRight: "5px" }}
+                  checked={travelEnquiry === "businessEnquiry"}
+                  onChange={enquiryOption}
+                />
+                <label htmlFor="businessEnquiry">Travel Platform Enquiry</label>
+              </span>
+            </div>
+
             <Formik initialValues={initialValues} onSubmit={onSubmit}>
               {({ errors, touched, handleChange, setFieldValue, values }) => (
                 <Form className="av-tooltip tooltip-label-bottom">
@@ -118,16 +163,30 @@ const Enquiry = ({ history, registerUserAction }) => {
                     />
                   </FormGroup>
 
-                  <FormGroup className="form-group has-float-label">
-                    <Label>
-                      <IntlMessages id="user.organisation" />
-                    </Label>
-                    <Field
-                      className="form-control"
-                      name="name_of_organisation"
-                      value={values.name_of_organisation}
-                    />
-                  </FormGroup>
+                  {travelEnquiry === "travelEnquiry" ? (
+                    <FormGroup className="form-group has-float-label">
+                      <Label>
+                        <IntlMessages id="Details of travel requirements" />
+                      </Label>
+                      <Field
+                        className="form-control"
+                        name="travel_requirements"
+                        value={values.travel_requirements}
+                      />
+                    </FormGroup>
+                  ) : (
+                    <FormGroup className="form-group has-float-label">
+                      <Label>
+                        <IntlMessages id="user.organisation" />
+                      </Label>
+                      <Field
+                        className="form-control"
+                        name="name_of_organisation"
+                        value={values.name_of_organisation}
+                      />
+                    </FormGroup>
+                  )}
+
                   <div className="d-flex justify-content-end align-items-center">
                     <Button
                       color="primary"

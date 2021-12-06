@@ -1,7 +1,7 @@
 export const sliderData = [
   {
     imageURL:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634840053/Lucky/Carousel/one_beach_lzgzpm.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607253/Lucky/Carousel/Carousel%20-%20compressed/one_beach_lzgzpm_evkqhj.jpg",
     gradientColor: "459CA2",
     textColor: "fff",
     directon: "90deg",
@@ -15,7 +15,7 @@ export const sliderData = [
   },
   {
     imageURL:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634839850/Lucky/Carousel/two_ice_krcaja.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607253/Lucky/Carousel/Carousel%20-%20compressed/two_ice_krcaja_n89a3y.jpg",
     gradientColor: "E1E0DF",
     textColor: "28538C",
     Headline__1: "ACCESS A GLOBAL",
@@ -28,7 +28,7 @@ export const sliderData = [
   },
   {
     imageURL:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634840059/Lucky/Carousel/three_building_hhhzq3.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607253/Lucky/Carousel/Carousel%20-%20compressed/three_building_hhhzq3_ovwgpu.jpg",
     gradientColor: "2B3BB3",
     textColor: "fff",
     Headline__1: "A PERSONAL TRAVEL",
@@ -41,7 +41,7 @@ export const sliderData = [
   },
   {
     imageURL:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634839843/Lucky/Carousel/four_ocean_sozoyk.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607253/Lucky/Carousel/Carousel%20-%20compressed/four_ocean_sozoyk_jjbkgo.jpg",
     gradientColor: "52BEFA",
     textColor: "fff",
     Headline__1: "GET MORE OUT OF YOUR",
@@ -54,7 +54,7 @@ export const sliderData = [
   },
   {
     imageURL:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634839845/Lucky/Carousel/five_jungle_tky2z0.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607253/Lucky/Carousel/Carousel%20-%20compressed/five_jungle_tky2z0_rktxlt.jpg",
     gradientColor: "E65F2D",
     textColor: "28538C",
     Headline__1: "REMOVE THE BURDEN OF",
@@ -67,7 +67,7 @@ export const sliderData = [
   },
   {
     imageURL:
-      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1634840047/Lucky/Carousel/six_rome_xxoee9.jpg",
+      "https://res.cloudinary.com/dx6zgsncl/image/upload/v1638607253/Lucky/Carousel/Carousel%20-%20compressed/six_rome_xxoee9_ijlszv.jpg",
     gradientColor: "184D87",
     textColor: "fff",
     Headline__1: "KNOW THE RULES FOR",
